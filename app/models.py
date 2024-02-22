@@ -8,11 +8,9 @@ class Category(models.Model):
 
 
 class Task(models.Model):
-    title = models.TextField,
-    description = models.TextField,
-    completed = models.BooleanField,
+    title = (models.TextField,)
+    description = (models.TextField,)
+    completed = (models.BooleanField,)
     category = models.ForeignKey(
-        Category,
-        related_name='tasks',
-        on_delete=models.CASCADE
+        Category, related_name="tasks", on_delete=models.CASCADE
     )
