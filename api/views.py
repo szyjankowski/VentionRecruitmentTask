@@ -22,6 +22,12 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if category_id := self.request.query_params.get("category"):
+            queryset = queryset.filter(category_id=category_id)
+        return queryset
+
 
 class CreateUserView(APIView):
     def post(self, request):

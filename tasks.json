@@ -1,0 +1,92 @@
+[
+{
+  "model": "app.task",
+  "pk": 1,
+  "fields": {
+    "title": "Homework",
+    "description": "Complete exercises from spanish book by tomorrow.",
+    "completed": false,
+    "category": 1
+  }
+},
+{
+  "model": "app.task",
+  "pk": 2,
+  "fields": {
+    "title": "Presentation",
+    "description": "Complete math presentation about recursion.",
+    "completed": false,
+    "category": 1
+  }
+},
+{
+  "model": "app.task",
+  "pk": 3,
+  "fields": {
+    "title": "Art",
+    "description": "Buy graphite pencils for art lessons.",
+    "completed": true,
+    "category": 1
+  }
+},
+{
+  "model": "app.task",
+  "pk": 4,
+  "fields": {
+    "title": "My room",
+    "description": "Clean my room, and wash windows.",
+    "completed": false,
+    "category": 2
+  }
+},
+{
+  "model": "app.task",
+  "pk": 5,
+  "fields": {
+    "title": "Trash",
+    "description": "Take out the trash.",
+    "completed": true,
+    "category": 2
+  }
+},
+{
+  "model": "app.task",
+  "pk": 6,
+  "fields": {
+    "title": "Doggy",
+    "description": "Walk the dog out, and give him some treats.",
+    "completed": true,
+    "category": 2
+  }
+},
+{
+  "model": "app.task",
+  "pk": 7,
+  "fields": {
+    "title": "Vention",
+    "description": "Complete vention example task.",
+    "completed": true,
+    "category": 3
+  }
+},
+{
+  "model": "app.task",
+  "pk": 8,
+  "fields": {
+    "title": "Django",
+    "description": "Explore django optimization",
+    "completed": false,
+    "category": 3
+  }
+},
+{
+  "model": "app.task",
+  "pk": 9,
+  "fields": {
+    "title": "Github",
+    "description": "Make your github more appealing.",
+    "completed": false,
+    "category": 3
+  }
+}
+]
