@@ -23,7 +23,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset().select_related("category")
         if category_id := self.request.query_params.get("category"):
             queryset = queryset.filter(category_id=category_id)
         return queryset

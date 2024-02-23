@@ -8,6 +8,7 @@ admin.site.register(Category)
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
+    list_select_related = ["category"]
     list_display = ("title", "description", "completed", "category")
     list_filter = (
         "category",
