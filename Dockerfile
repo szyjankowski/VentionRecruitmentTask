@@ -13,10 +13,12 @@ COPY . /app/
 # run needed migrations to create database scheme
 RUN python manage.py makemigrations
 RUN python manage.py migrate
-# change superuser password in .env - $DJANGO_SUPERUSER_PASSWORD
-RUN python manage.py createsuperuser --noinput \
-    --username admin \
-    --email admin@example.com
+
+# create superuser
+ENV DJANGO_SUPERUSER_PASSWORD admin
+RUN python manage.py createsuperuser --noinput --username admin --email admin@example.com
+
+
 
 # run fixtures to fill database with mock data
 RUN python manage.py loaddata fixtures/categories.json
