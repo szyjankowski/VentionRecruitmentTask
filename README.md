@@ -35,7 +35,7 @@ your preferred browser.
 ## Api endpoints
 
 ### Authentication
-> Note: App will automatically create superuser from  data in .env.example file which is **username: admin, password: admin**. If you want to change password you can od it in .env file.
+> Note: App will automatically create superuser from  data in .env.example file which is **username: admin, password: admin**.
 
 In order to obatin authorization access to create/update/delete objects you need to create (or use automatically created superuser one) an account by POST method api call at `/api/auth/register/`
 
