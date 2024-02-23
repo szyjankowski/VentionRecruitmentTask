@@ -1,4 +1,4 @@
-from app.models import Category, Task
+from api.models import Category, Task
 from api.serializers import TaskSerializer, CategorySerializer, UserSerializer
 from django.contrib.auth import logout
 from rest_framework.decorators import api_view

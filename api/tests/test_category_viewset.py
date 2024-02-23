@@ -1,7 +1,7 @@
 from rest_framework.test import APIClient, APITestCase
 from rest_framework import status
 from django.contrib.auth.models import User
-from app.models import Category, Task
+from api.models import Category, Task
 from django.urls import reverse
 
 

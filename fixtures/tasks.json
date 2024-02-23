@@ -1,6 +1,6 @@
 [
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 1,
   "fields": {
     "title": "Homework",
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 2,
   "fields": {
     "title": "Presentation",
@@ -20,7 +20,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 3,
   "fields": {
     "title": "Art",
@@ -30,7 +30,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 4,
   "fields": {
     "title": "My room",
@@ -40,7 +40,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 5,
   "fields": {
     "title": "Trash",
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 6,
   "fields": {
     "title": "Doggy",
@@ -60,7 +60,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 7,
   "fields": {
     "title": "Vention",
@@ -70,7 +70,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 8,
   "fields": {
     "title": "Django",
@@ -80,7 +80,7 @@
   }
 },
 {
-  "model": "app.task",
+  "model": "api.task",
   "pk": 9,
   "fields": {
     "title": "Github",

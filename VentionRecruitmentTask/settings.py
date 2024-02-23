@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 PROJECT_APPS = [
-    "app.apps.AppConfig",
     "api.apps.ApiConfig",
 ]
 

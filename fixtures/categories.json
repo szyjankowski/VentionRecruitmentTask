@@ -1,20 +1,20 @@
 [
 {
-  "model": "app.category",
+  "model": "api.category",
   "pk": 1,
   "fields": {
     "name": "School"
   }
 },
 {
-  "model": "app.category",
+  "model": "api.category",
   "pk": 2,
   "fields": {
     "name": "Household"
   }
 },
 {
-  "model": "app.category",
+  "model": "api.category",
   "pk": 3,
   "fields": {
     "name": "Programming"
