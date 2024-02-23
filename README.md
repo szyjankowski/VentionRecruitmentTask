@@ -3,9 +3,13 @@
 
 Setup is really easy as there is just Dockerfile.
 
-By default, the Docker will expose port 8000, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
+Firstly clone directory using git and cd into it.
+```sh
+git clone https://github.com/szyjankowski/VentionRecruitmentTask.git
+
+cd .\VentionRecruitmentTask\
+```
+When ready, simply use the Dockerfile to build the image.
 
 If you're in directory with Dockerfile root then execute these:
 ```sh
@@ -13,7 +17,8 @@ docker build -t example_name .
 ```
 
 This will create the app image and pull in the necessary dependencies.
-
+By default, the Docker will expose port 8000, so change this within the
+Dockerfile if necessary.
 
 Once done, run the Docker image.
 
@@ -51,7 +56,7 @@ or use curl in terminal.
 curl -X POST http://localhost:8000/api/auth/register/ -H "Content-Type: application/json" -d "{\"username\": \"new_user\", \"password\": \"password123\"}"
 
 ```
-
+### Log in
 After this you can continue using application within your browser by firstly logging in on `/api/auth/login` endpoint and then visiting `/api/`, or you can get access token used for authorization when using raw api calls, for e.g. with curl by making POST api call at `api/auth/api-token-auth/`
 ```sh
 curl -X POST http://localhost:8000/api/auth/api-token-auth/ -H "Content-Type: application/json" -d "{\"username\": \"your_username\", \"password\": \"your_password\"}"
