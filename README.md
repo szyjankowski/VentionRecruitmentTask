@@ -60,11 +60,17 @@ curl -X POST http://localhost:8000/api/auth/register/ -H "Content-Type: applicat
 ### Log in
 After this you can continue using application within your browser by firstly logging in on `/api/auth/login` endpoint and then visiting `/api/`.
 
+
 ### Access token
 You can also get access token used for authorization when using raw api calls, for e.g. with curl by making POST api call at `api/auth/api-token-auth/`
 ```sh
 curl -X POST http://localhost:8000/api/auth/api-token-auth/ -H "Content-Type: application/json" -d "{\"username\": \"your_username\", \"password\": \"your_password\"}"
 ```
+To use the access token, with every api call you make you should include "Authorization: " followed by your token for e.g.
+```sh
+curl -X PUT "http://localhost:8000/api/categories/3/" -H "Authorization: Token <your_token>" -H "Content-Type: application/json" -d "{\"name\": \"test\"}"
+```
+
 ### Browsing data
 After logging in, or acquiring token you have access to all CRUD opeartions on data.
 > Quick reminder that app automatically loads example data to database during creation of docker container.
