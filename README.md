@@ -5,6 +5,7 @@ Setup is really easy as there is just Dockerfile.
 
 Firstly clone directory using git and cd into it.
 ```sh
+git init
 git clone https://github.com/szyjankowski/VentionRecruitmentTask.git
 
 cd .\VentionRecruitmentTask\
