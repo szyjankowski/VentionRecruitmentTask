@@ -19,7 +19,7 @@ RUN python manage.py createsuperuser --noinput \
     --email admin@example.com
 
 # run fixtures to fill database with mock data
-RUN python manage.py loaddata categories.json
-RUN python manage.py loaddata tasks.json
+RUN python manage.py loaddata fixtures/categories.json
+RUN python manage.py loaddata fixtures/tasks.json
 
 CMD ["sh", "-c", "cp .env.example .env && python manage.py runserver 0.0.0.0:8000"]
