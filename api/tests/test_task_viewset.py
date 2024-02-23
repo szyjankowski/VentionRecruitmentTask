@@ -31,16 +31,16 @@ class TaskViewSetTests(APITestCase):
 
     def test_create_task(self):
         self.assertEqual(Task.objects.count(), 1)
-        response = self.client.post(
-            reverse("task-list"),
-            {
-                "title": "new_task",
-                "description": "new_task_description",
-                "category": self.category.id,
-            },
-        )
+        new_data = {
+            "title": "new_task",
+            "description": "new_task_description",
+            "category": self.category.id,
+        }
+        response = self.client.post(reverse("task-list"), new_data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Task.objects.count(), 2)
+        self.assertEqual(response.data["title"], new_data["title"])
+        self.assertEqual(response.data["description"], new_data["description"])
 
     def test_update_task(self):
         updated_data = {
@@ -53,6 +53,8 @@ class TaskViewSetTests(APITestCase):
         self.task.refresh_from_db()
         self.assertEqual(self.task.title, "updated_task")
         self.assertEqual(self.task.description, "updated_description")
+        self.assertEqual(response.data["title"], "updated_task")
+        self.assertEqual(response.data["description"], "updated_description")
 
     def test_patch_task(self):
         patch_data = {"title": "patched_task"}
@@ -60,6 +62,7 @@ class TaskViewSetTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.task.refresh_from_db()
         self.assertEqual(self.task.title, "patched_task")
+        self.assertEqual(response.data["title"], "patched_task")
 
     def test_delete_task(self):
         response = self.client.delete(self.task_url)

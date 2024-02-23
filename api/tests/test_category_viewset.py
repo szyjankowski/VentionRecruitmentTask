@@ -26,9 +26,11 @@ class CategoryViewSetTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_authenticated_user_can_create_category(self):
+        new_data = {"name": "new_category"}
         self.assertEqual(Category.objects.count(), 1)
-        response = self.client.post(reverse("category-list"), {"name": "new_category"})
+        response = self.client.post(reverse("category-list"), new_data)
         self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.data["name"], new_data["name"])
         self.assertEqual(Category.objects.count(), 2)
 
     def test_authenticated_user_can_update_category(self):
@@ -37,6 +39,7 @@ class CategoryViewSetTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.category.refresh_from_db()
         self.assertEqual(self.category.name, "new_updated_category")
+        self.assertEqual(response.data["name"], "new_updated_category")
 
     def test_authenticated_user_can_delete_category(self):
         response = self.client.delete(self.category_url)
@@ -49,6 +52,7 @@ class CategoryViewSetTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.category.refresh_from_db()
         self.assertEqual(self.category.name, "patched_category")
+        self.assertEqual(response.data["name"], "patched_category")
 
     def test_unauthenticated_user_cant_use_create_method(self):
         self.client.logout()
